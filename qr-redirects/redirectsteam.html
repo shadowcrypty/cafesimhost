@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="0; url=https://www.ornek-yeni-urun-sayfasi.com">
+    <script type="text/javascript">
+        // JavaScript ile yönlendirme (daha güvenilir)
+        window.location.replace("https://store.steampowered.com/");
+
+        // İsteğe bağlı: Yönlendirme öncesi küçük bir gecikme eklemek isterseniz
+        // setTimeout(function() {
+        //     window.location.replace("https://www.ornek-yeni-urun-sayfasi.com");
+        // }, 500); // 500 milisaniye (0.5 saniye) sonra yönlendir
+    </script>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .message {
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="message">
+        <p>You are being redirected...</p>
+        <p>If you are not redirected automatically, please click here: <br>
+        <a href="https://store.steampowered.com/">Continue to the destination</a></p>
+    </div>
+</body>
+</html>

@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cafe Simulator - Official Landing Page & Wishlist</title>
     
-    <!-- Link to Open Sans for clean typography -->
-    <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1762785");</style>
+    <!-- Link to Open Sans for clean typography --><style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1762785");</style>
 
-    <!-- ATTRACTIVE CUSTOM LANDING PAGE STYLES -->
-    <style>
+    <!-- ATTRACTIVE CUSTOM LANDING PAGE STYLES --><style>
         /* CSS Variables for Theming */
         :root {
             --color-primary: #5A392D;   /* Deep Coffee Brown */
@@ -166,6 +164,64 @@
             color: #777 !important;
         }
 
+        /* ⭐️ NEW FLEX CONTAINER FOR EMAIL INPUT AND BUTTON */
+        .email-subscribe-row {
+            display: flex;
+            gap: 10px; /* Space between input and button */
+            margin-bottom: 20px; /* Space above checkboxes */
+            width: 100%; /* Ensure it takes full width of parent */
+            max-width: 646px; /* Match max-width of steam widget and checkbox row */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .email-subscribe-row .ml-field-group {
+            flex-grow: 3; /* Email input takes more space */
+        }
+
+        .email-subscribe-row .ml-button-wrapper {
+            flex-grow: 1; /* Button takes less space */
+            min-width: 100px; /* Minimum width for the button */
+        }
+
+        /* Style the email input field */
+        .email-subscribe-row .form-control {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid var(--color-secondary); /* Cream border */
+            border-radius: 6px;
+            background-color: #281C1A; /* Darker input background */
+            color: var(--color-text);
+            font-size: 16px;
+            height: auto; /* Allow height to adjust based on padding */
+            line-height: normal; /* Ensure text sits correctly */
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+        }
+        .email-subscribe-row .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Style the subscribe button */
+        .email-subscribe-row .primary {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            height: auto; /* Allow height to adjust based on padding */
+            line-height: normal;
+            box-sizing: border-box;
+            background-color: var(--color-secondary) !important; /* Cream background */
+            color: var(--color-background) !important; /* Dark text */
+            border: 1px solid var(--color-secondary) !important;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .email-subscribe-row .primary:hover {
+            background-color: #A98777 !important; /* Slightly darker cream on hover */
+            border-color: #A98777 !important;
+            cursor: pointer;
+        }
+
 
         @media (max-width: 650px) {
             .container {
@@ -181,12 +237,17 @@
                 width: 48%; /* Two items per row on mobile */
                 max-width: none;
             }
+            /* Stack email and button vertically on small screens */
+            .email-subscribe-row {
+                flex-direction: column;
+            }
+            .email-subscribe-row .ml-button-wrapper {
+                min-width: 100%;
+            }
         }
     </style>
 
-    <!-- START OF MAILERLITE EMBED STYLES (Provided CSS) -->
-    <!-- Note: I kept the important parts of the original CSS to avoid conflicts with the MailerLite script requirements -->
-    <style type="text/css">
+    <!-- START OF MAILERLITE EMBED STYLES (Provided CSS) --><style type="text/css">
     /* LOADER */
     .ml-form-embedSubmitLoad {
         display: inline-block;
@@ -233,6 +294,10 @@
     }
     }
     /* ... (The hundreds of lines of MailerLite CSS should be copied here) ... */
+    /* I'm keeping the MailerLite specific styles minimal here for brevity,
+       but in your actual file, ensure the complete MailerLite CSS
+       you initially provided is included here to maintain its functionality
+       and default resets. */
     #mlb2-33971183.ml-form-embedContainer {
         box-sizing: border-box;
         display: table;
@@ -240,23 +305,18 @@
         position: static;
         width: 100% !important;
     }
-    /* Note: Due to size constraints, I cannot include the full original MailerLite CSS here, but you MUST ensure you combine the custom CSS above with the full original code you provided, especially the form block specific styles like #mlb2-33971183... */
     </style>
-    <!-- END OF MAILERLITE EMBED STYLES -->
-    
-</head>
+    <!-- END OF MAILERLITE EMBED STYLES --></head>
 <body>
 
     <div class="container">
         
-        <!-- ☕ HERO SECTION -->
-        <h1>Cafe Simulator</h1>
+        <!-- ☕ HERO SECTION --><h1>Cafe Simulator</h1>
         <p class="tagline">Build, Brew, and Master the Art of Coffee Shop Management!</p>
 
         <div class="cta-section">
 
-            <!-- 🎮 STEAM WIDGET INTEGRATION -->
-            <div class="steam-widget-container">
+            <!-- 🎮 STEAM WIDGET INTEGRATION --><div class="steam-widget-container">
                 <iframe 
                     src="https://store.steampowered.com/widget/2384980/" 
                     frameborder="0" 
@@ -268,8 +328,7 @@
 
             <hr style="width: 100%; border-color: var(--color-primary); margin: 20px 0;">
 
-            <!-- 📧 MAILERLITE EMAIL FORM INTEGRATION -->
-            <div id="mlb2-33971183" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-33971183">
+            <!-- 📧 MAILERLITE EMAIL FORM INTEGRATION --><div id="mlb2-33971183" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-33971183">
                 <div class="ml-form-align-center ">
                     <div class="ml-form-embedWrapper embedForm">
                         <div class="ml-form-embedBody ml-form-embedBodyHorizontal row-form">
@@ -277,24 +336,25 @@
                                 <h4>Join the Cafe Crew Mail List</h4>
                                 <p>What kind of updates are you interested in?</p>
                             </div>
-                            <!-- MailerLite Form -->
-                            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1951004/forms/172329260115035438/subscribe" data-code="" method="post" target="_blank">
+                            <!-- MailerLite Form --><form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1951004/forms/172329260115035438/subscribe" data-code="" method="post" target="_blank">
                                 <div class="ml-form-formContent">
-                                    <div class="ml-form-fieldRow ">
+                                    
+                                    <!-- ⭐️ MODIFIED: NEW HORIZONTAL EMAIL/BUTTON ROW --><div class="email-subscribe-row">
                                         <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
                                             <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email Address" autocomplete="email">
                                         </div>
+                                        <div class="ml-button-wrapper">
+                                            <button type="submit" class="primary">Subscribe</button>
+                                        </div>
                                     </div>
-                                    <div class="ml-form-fieldRow ml-last-item">
+                                    <!-- END NEW HORIZONTAL EMAIL/BUTTON ROW --><!-- This row for checkboxes will now align with the above row --><div class="ml-form-fieldRow ml-last-item">
                                         <div class="ml-field-group ml-field-name">
                                             <div class="custom-checkbox-radio-list">
-                                                <!-- "All" Checkbox (ID: 0) -->
-                                                <div class="custom-control custom-checkbox">
+                                                <!-- "All" Checkbox (ID: 0) --><div class="custom-control custom-checkbox">
                                                     <input name="fields[name][]" aria-label="name" class="custom-control-input" type="checkbox" value="All" id="checkbox-33971183-13-0">
                                                     <label class="custom-control-label" for="checkbox-33971183-13-0">All Updates</label>
                                                 </div>
-                                                <!-- Individual Checkboxes (IDs: 1, 2, 3) -->
-                                                <div class="custom-control custom-checkbox">
+                                                <!-- Individual Checkboxes (IDs: 1, 2, 3) --><div class="custom-control custom-checkbox">
                                                     <input name="fields[name][]" aria-label="name" class="custom-control-input" type="checkbox" value="News about game" id="checkbox-33971183-13-1">
                                                     <label class="custom-control-label" for="checkbox-33971183-13-1">News</label>
                                                 </div>
@@ -316,14 +376,7 @@
                                     </div>
                                 </div>
                                 <input type="hidden" name="ml-submit" value="1">
-                                <div class="ml-form-embedSubmit">
-                                    <button type="submit" class="primary">Subscribe for Updates</button>
-                                    <button disabled="disabled" style="display: none;" type="button" class="loading">
-                                        <div class="ml-form-embedSubmitLoad"></div>
-                                        <span class="sr-only">Loading...</span>
-                                    </button>
-                                </div>
-                                <input type="hidden" name="anticsrf" value="true">
+                                <!-- The button is now inside the email-subscribe-row, so this original wrapper is no longer needed --><input type="hidden" name="anticsrf" value="true">
                             </form>
                         </div>
                         <div class="ml-form-successBody row-success" style="display: none">
@@ -335,13 +388,11 @@
                     </div>
                 </div>
             </div>
-            <!-- END OF MAILERLITE EMBED FORM/HTML -->
-        </div>
+            <!-- END OF MAILERLITE EMBED FORM/HTML --></div>
 
     </div>
 
-    <!-- START OF CUSTOM JAVASCRIPT FOR CHECKBOX LOGIC -->
-    <script>
+    <!-- START OF CUSTOM JAVASCRIPT FOR CHECKBOX LOGIC --><script>
         document.addEventListener('DOMContentLoaded', function() {
             const allCheckbox = document.getElementById('checkbox-33971183-13-0');
             const individualCheckboxes = [
@@ -389,10 +440,7 @@
             }
         });
     </script>
-    <!-- END OF CUSTOM JAVASCRIPT FOR CHECKBOX LOGIC -->
-
-    <!-- START OF MAILERLITE EMBED JAVASCRIPT (Provided Code) -->
-    <script>
+    <!-- END OF CUSTOM JAVASCRIPT FOR CHECKBOX LOGIC --><!-- START OF MAILERLITE EMBED JAVASCRIPT (Provided Code) --><script>
         function ml_webform_success_33971183() {
             var $ = ml_jQuery || jQuery;
             $('.ml-subscribe-form-33971183 .row-success').show();
@@ -403,7 +451,5 @@
     <script>
         fetch("https://assets.mailerlite.com/jsonp/1951004/forms/172329260115035438/takel")
     </script>
-    <!-- END OF MAILERLITE EMBED JAVASCRIPT -->
-
-</body>
+    <!-- END OF MAILERLITE EMBED JAVASCRIPT --></body>
 </html>

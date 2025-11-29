@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cafe Simulator - Official Landing Page & Wishlist</title>
     
+    <!-- Link to Open Sans for clean typography -->
     <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1762785");</style>
 
+    <!-- ATTRACTIVE CUSTOM LANDING PAGE STYLES -->
     <style>
         /* CSS Variables for Theming */
         :root {
@@ -28,11 +30,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            /* Optional: Add a full-screen background image here for maximum impact */
-            /* background-image: url('YOUR_HIGH_QUALITY_GAME_SCREENSHOT.jpg'); */
+            /* Placeholder Background Image (Replace with your art!) */
+            background-image: url('https://placehold.co/1920x1080/281613/C7A48E?text=Cafe+Simulator+Key+Art+Placeholder'); 
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Keeps background static on scroll */
+            background-attachment: fixed;
+            overflow-y: auto; /* Allow scrolling if content is long */
         }
         
         .container {
@@ -63,16 +66,15 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px; /* Space between the widget and the form */
+            gap: 20px;
         }
 
-        /* Styling the Steam Widget container */
         .steam-widget-container {
             margin-bottom: 25px;
             border: 2px solid var(--color-secondary);
             border-radius: 8px;
             overflow: hidden;
-            max-width: 646px; /* Match the iframe width */
+            max-width: 646px;
             width: 100%;
         }
 
@@ -92,14 +94,78 @@
         #mlb2-33971183.ml-form-embedContainer .ml-form-embedSubmit button.primary {
             background-color: var(--color-secondary) !important;
             border-color: var(--color-secondary) !important;
-            color: var(--color-background) !important; /* Dark text on light button */
+            color: var(--color-background) !important;
             font-size: 16px !important;
             padding: 12px 20px !important;
+            transition: background-color 0.3s;
         }
         #mlb2-33971183.ml-form-embedContainer .ml-form-embedSubmit button.primary:hover {
-            background-color: #A98777 !important; /* Slightly darker cream on hover */
+            background-color: #A98777 !important;
             border-color: #A98777 !important;
         }
+        
+        /* ⭐️ CUSTOM CHECKBOX BUTTON STYLES (Side-by-Side Layout) */
+        
+        /* Apply Flexbox to the list wrapper */
+        .custom-checkbox-radio-list {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            gap: 10px;
+            justify-content: center;
+            margin: 10px 0 20px 0 !important;
+        }
+
+        /* Style the individual checkbox containers as buttons */
+        .custom-control.custom-checkbox {
+            padding-left: 0;
+            cursor: pointer;
+            flex-grow: 1; /* Distribute space evenly */
+            min-width: 120px; /* Minimum size for touch targets */
+            max-width: 150px;
+        }
+        
+        /* Hide the default input visual */
+        .custom-control-input {
+            display: none !important;
+        }
+
+        /* Style the label (which acts as the button) */
+        .custom-control-label {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: #382721; /* Darker brown unselected */
+            color: var(--color-secondary) !important;
+            border: 1px solid var(--color-primary);
+            border-radius: 6px;
+            padding: 8px 10px;
+            margin: 0 !important;
+            font-weight: 400 !important;
+            font-size: 14px !important;
+            line-height: normal;
+            transition: background-color 0.3s, border-color 0.3s;
+            position: relative;
+            padding-left: 0 !important;
+            min-height: auto !important;
+        }
+
+        /* VISUAL FEEDBACK: Checked state */
+        .custom-control-input:checked + .custom-control-label {
+            background-color: var(--color-secondary) !important; /* Cream background when selected */
+            color: var(--color-background) !important; /* Dark text when selected */
+            border-color: var(--color-text);
+            font-weight: 700 !important;
+        }
+
+        /* Visual Feedback for Disabled items */
+        .custom-control-input:disabled + .custom-control-label {
+            opacity: 0.5;
+            pointer-events: none;
+            cursor: not-allowed;
+            background-color: #281B15;
+            color: #777 !important;
+        }
+
 
         @media (max-width: 650px) {
             .container {
@@ -107,28 +173,89 @@
                 width: 95%;
             }
             .steam-widget-container iframe {
-                width: 100% !important; /* Make widget responsive */
-                height: auto;
+                width: 100% !important;
+                height: 180px;
+            }
+            .custom-control.custom-checkbox {
+                flex-grow: 1;
+                width: 48%; /* Two items per row on mobile */
+                max-width: none;
             }
         }
     </style>
 
+    <!-- START OF MAILERLITE EMBED STYLES (Provided CSS) -->
+    <!-- Note: I kept the important parts of the original CSS to avoid conflicts with the MailerLite script requirements -->
     <style type="text/css">
+    /* LOADER */
+    .ml-form-embedSubmitLoad {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+    }
+
+    .g-recaptcha {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    height: ;
+    }
+
+    .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+    }
+
+    .ml-form-embedSubmitLoad:after {
+    content: " ";
+    display: block;
+    width: 11px;
+    height: 11px;
+    margin: 1px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    border-color: #ffffff #ffffff #ffffff transparent;
+    animation: ml-form-embedSubmitLoad 1.2s linear infinite;
+    }
+    @keyframes ml-form-embedSubmitLoad {
+    0% {
+    transform: rotate(0deg);
+    }
+    100% {
+    transform: rotate(360deg);
+    }
+    }
     /* ... (The hundreds of lines of MailerLite CSS should be copied here) ... */
-    .g-recaptcha { transform: scale(1); -webkit-transform: scale(1); transform-origin: 0 0; -webkit-transform-origin: 0 0; height: ; }
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
-    /* ... (Rest of the MailerLite CSS) ... */
+    #mlb2-33971183.ml-form-embedContainer {
+        box-sizing: border-box;
+        display: table;
+        margin: 0 auto;
+        position: static;
+        width: 100% !important;
+    }
+    /* Note: Due to size constraints, I cannot include the full original MailerLite CSS here, but you MUST ensure you combine the custom CSS above with the full original code you provided, especially the form block specific styles like #mlb2-33971183... */
     </style>
-    </head>
+    <!-- END OF MAILERLITE EMBED STYLES -->
+    
+</head>
 <body>
 
     <div class="container">
         
+        <!-- ☕ HERO SECTION -->
         <h1>Cafe Simulator</h1>
         <p class="tagline">Build, Brew, and Master the Art of Coffee Shop Management!</p>
 
         <div class="cta-section">
 
+            <!-- 🎮 STEAM WIDGET INTEGRATION -->
             <div class="steam-widget-container">
                 <iframe 
                     src="https://store.steampowered.com/widget/2384980/" 
@@ -141,14 +268,16 @@
 
             <hr style="width: 100%; border-color: var(--color-primary); margin: 20px 0;">
 
+            <!-- 📧 MAILERLITE EMAIL FORM INTEGRATION -->
             <div id="mlb2-33971183" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-33971183">
                 <div class="ml-form-align-center ">
                     <div class="ml-form-embedWrapper embedForm">
                         <div class="ml-form-embedBody ml-form-embedBodyHorizontal row-form">
                             <div class="ml-form-embedContent">
                                 <h4>Join the Cafe Crew Mail List</h4>
-                                <p>Get exclusive news, early play test invites, and special offers!</p>
+                                <p>What kind of updates are you interested in?</p>
                             </div>
+                            <!-- MailerLite Form -->
                             <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1951004/forms/172329260115035438/subscribe" data-code="" method="post" target="_blank">
                                 <div class="ml-form-formContent">
                                     <div class="ml-form-fieldRow ">
@@ -159,17 +288,19 @@
                                     <div class="ml-form-fieldRow ml-last-item">
                                         <div class="ml-field-group ml-field-name">
                                             <div class="custom-checkbox-radio-list">
+                                                <!-- "All" Checkbox (ID: 0) -->
                                                 <div class="custom-control custom-checkbox">
                                                     <input name="fields[name][]" aria-label="name" class="custom-control-input" type="checkbox" value="All" id="checkbox-33971183-13-0">
                                                     <label class="custom-control-label" for="checkbox-33971183-13-0">All Updates</label>
                                                 </div>
+                                                <!-- Individual Checkboxes (IDs: 1, 2, 3) -->
                                                 <div class="custom-control custom-checkbox">
                                                     <input name="fields[name][]" aria-label="name" class="custom-control-input" type="checkbox" value="News about game" id="checkbox-33971183-13-1">
-                                                    <label class="custom-control-label" for="checkbox-33971183-13-1">News about game</label>
+                                                    <label class="custom-control-label" for="checkbox-33971183-13-1">News</label>
                                                 </div>
                                                 <div class="custom-control custom-checkbox">
                                                     <input name="fields[name][]" aria-label="name" class="custom-control-input" type="checkbox" value="Speacial offers" id="checkbox-33971183-13-2">
-                                                    <label class="custom-control-label" for="checkbox-33971183-13-2">Special offers</label>
+                                                    <label class="custom-control-label" for="checkbox-33971183-13-2">Offers</label>
                                                 </div>
                                                 <div class="custom-control custom-checkbox">
                                                     <input name="fields[name][]" aria-label="name" class="custom-control-input" type="checkbox" value="Play Test" id="checkbox-33971183-13-3">
@@ -204,10 +335,63 @@
                     </div>
                 </div>
             </div>
-            </div>
+            <!-- END OF MAILERLITE EMBED FORM/HTML -->
+        </div>
 
     </div>
 
+    <!-- START OF CUSTOM JAVASCRIPT FOR CHECKBOX LOGIC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const allCheckbox = document.getElementById('checkbox-33971183-13-0');
+            const individualCheckboxes = [
+                document.getElementById('checkbox-33971183-13-1'), // News
+                document.getElementById('checkbox-33971183-13-2'), // Offers
+                document.getElementById('checkbox-33971183-13-3')  // Play Test
+            ];
+
+            if (allCheckbox) {
+                // Function to set the disabled state of the individual checkboxes
+                function setIndividualDisabled(disabled) {
+                    individualCheckboxes.forEach(checkbox => {
+                        if (checkbox) {
+                            checkbox.disabled = disabled;
+                            // Ensure the visual state is updated
+                            if (disabled) {
+                                // If disabling, uncheck them to prevent conflicting data
+                                checkbox.checked = false;
+                            }
+                            // Re-apply the classes to trigger any dependent styling
+                            checkbox.parentElement.classList.toggle('disabled', disabled);
+                        }
+                    });
+                }
+
+                // Initial check when the page loads
+                setIndividualDisabled(allCheckbox.checked);
+
+                // Event listener for the "All" checkbox
+                allCheckbox.addEventListener('change', function() {
+                    setIndividualDisabled(this.checked);
+                });
+
+                // Event listener for individual checkboxes (if clicked, "All" should uncheck)
+                individualCheckboxes.forEach(checkbox => {
+                    if (checkbox) {
+                        checkbox.addEventListener('change', function() {
+                            if (allCheckbox.checked && this.checked) {
+                                allCheckbox.checked = false;
+                                setIndividualDisabled(false); // Enable others if "All" is manually unchecked by clicking another
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+    <!-- END OF CUSTOM JAVASCRIPT FOR CHECKBOX LOGIC -->
+
+    <!-- START OF MAILERLITE EMBED JAVASCRIPT (Provided Code) -->
     <script>
         function ml_webform_success_33971183() {
             var $ = ml_jQuery || jQuery;
@@ -219,5 +403,7 @@
     <script>
         fetch("https://assets.mailerlite.com/jsonp/1951004/forms/172329260115035438/takel")
     </script>
-    </body>
+    <!-- END OF MAILERLITE EMBED JAVASCRIPT -->
+
+</body>
 </html>
